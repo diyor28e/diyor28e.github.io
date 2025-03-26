@@ -1,12 +1,97 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+  <meta charset="UTF-8">
+  <title>My Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #444;
+    }
+    .section {
+      margin-top: 30px;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: "• ";
+      color: #007BFF;
+    }
+  </style>
 </head>
 <body>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+<div class="container">
+  <h1 id="name"></h1>
+  <p id="contact"></p>
+
+  <div class="section">
+    <h2>Education</h2>
+    <ul id="education"></ul>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <ul id="skills"></ul>
+  </div>
+
+  <div class="section">
+    <h2>Experience</h2>
+    <ul id="experience"></ul>
+  </div>
+</div>
+
+<script>
+  const resumeData = {
+    name: "Eldor Eshniyozov",
+    contact: "Email: eldor@example.com | Phone: +49 123 4567890",
+    education: [
+      "M.Sc. in Emobility, FAU Erlangen-Nürnberg",
+      "B.Sc. in Mechanical Engineering"
+    ],
+    skills: [
+      "JavaScript, Python, SQL",
+      "Cybersecurity, AI, Machine Learning",
+      "Project Management, Agile, Scrum"
+    ],
+    experience: [
+      "Lecturer at Smart Industry Campus GmbH (2024 - Present)",
+      "2 years industry experience in ERP technology",
+      "Tutor for Network+, Python, SQL and Cybersecurity"
+    ]
+  };
+
+  document.getElementById("name").textContent = resumeData.name;
+  document.getElementById("contact").textContent = resumeData.contact;
+
+  function populateList(id, items) {
+    const ul = document.getElementById(id);
+    items.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+  }
+
+  populateList("education", resumeData.education);
+  populateList("skills", resumeData.skills);
+  populateList("experience", resumeData.experience);
+</script>
 
 </body>
-</html> 
+</html>
