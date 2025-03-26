@@ -2,89 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Resume</title>
+  <title>Diyorbek Eshniyozov Resume</title>
   <style>
     body {
-      font-family: 'Times New Roman', Times, serif, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f4f4;
       color: #333;
     }
-    .container {
+
+    .resume {
+      display: flex;
+      max-width: 1000px;
+      margin: 40px auto;
       background: #fff;
-      padding: 20px 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .left {
+      width: 35%;
+      background: #1e1e26;
+      color: white;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .left img {
+      width: 180px;
+      height: 220px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      max-width: 800px;
-      margin: auto;
+      object-fit: cover;
+      margin-bottom: 30px;
+      background: #ccc;
     }
-    h1, h2 {
-      color: #444;
+
+    .left h3 {
+      margin-top: 40px;
+      margin-bottom: 10px;
     }
-    .section {
+
+    .left p {
+      margin: 0;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .contact-info {
       margin-top: 30px;
+      font-size: 14px;
+      line-height: 1.8;
     }
-    ul {
+
+    .contact-info i {
+      margin-right: 10px;
+    }
+
+    .right {
+      width: 65%;
+      padding: 40px 30px;
+      position: relative;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .header h2 {
+      margin: 5px 0 0;
+      font-size: 16px;
+      font-weight: normal;
+      color: #f2aa4c;
+      font-style: italic;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 80px solid transparent;
+      border-bottom: 80px solid #f2aa4c;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .section h3 {
+      border-bottom: 2px solid #f2aa4c;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      color: #1e1e26;
+    }
+
+    .section ul {
       list-style: none;
       padding-left: 0;
     }
-    ul li::before {
-      content: "• ";
-      color: #007BFF;
+
+    .section ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 15px;
     }
+
+    .section ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #1e1e26;
+    }
+
+    .education li span {
+      display: block;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1 id="name"></h1>
-  <p id="contact"></p>
+<div class="resume">
+  <div class="left">
+    <img src="profile.jpg" alt="Profile Picture">
+    <h3>About me</h3>
+    <p>I am from Surkhandarya, and</p>
 
-  <div class="section">
-    <h2>Education</h2>
-    <ul id="education"></ul>
+    <h3>Contact Me</h3>
+    <div class="contact-info">
+      📞 +998 94 422 70 63<br>
+      📧 d.eshniyozov@newuu.uz<br>
+      📍 Tashkent, Minor, Osiyo 86
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Skills</h2>
-    <ul id="skills"></ul>
-  </div>
+  <div class="right">
+    <div class="triangle"></div>
 
-  <div class="section">
-    <h2>Experience</h2>
-    <ul id="experience"></ul>
+    <div class="header">
+      <div>
+        <h1>Diyorbek Eshniyozov</h1>
+        <h2>Cybersecurity Specialist</h2>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Skills</h3>
+      <ul>
+        <li>Programming</li>
+        <li>Pentesting</li>
+        <li>English C1</li>
+      </ul>
+    </div>
+
+    <div class="section education">
+      <h3>Education</h3>
+      <ul>
+        <li>
+          <span>2024–2028</span>
+          New Uzbekistan University
+        </li>
+        <li>
+          <span>2024–2025</span>
+          Haad TC
+        </li>
+        <li>
+          <span>2021–2024</span>
+          Presidential School in Termez
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
-
-<script>
-  const resumeData = {
-    name: "Diyorbek Eshniyozov",
-    contact: "Email: diyorbek@gmail.com | Phone: +998 94 422 70 63",
-    education: [
-      "Presidential School in Termez",
-      "B.Sc. in New Uzbekistan University"
-    ],
-    skills: [
-      "JavaScript, Python, SQL",
-      "Cybersecurity, C++",
-    ],
-  };
-
-  document.getElementById("name").textContent = resumeData.name;
-  document.getElementById("contact").textContent = resumeData.contact;
-
-  function populateList(id, items) {
-    const ul = document.getElementById(id);
-    items.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      ul.appendChild(li);
-    });
-  }
-
-  populateList("education", resumeData.education);
-  populateList("skills", resumeData.skills);
-</script>
 
 </body>
 </html>
