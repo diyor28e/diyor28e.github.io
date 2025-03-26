@@ -5,7 +5,7 @@
   <title>My Resume</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Times New Roman', Times, serif, sans-serif;
       margin: 40px;
       background-color: #f4f4f4;
       color: #333;
@@ -58,22 +58,16 @@
 
 <script>
   const resumeData = {
-    name: "Eldor Eshniyozov",
-    contact: "Email: eldor@example.com | Phone: +49 123 4567890",
+    name: "Diyorbek Eshniyozov",
+    contact: "Email: diyorbek@gmail.com | Phone: +998 94 422 70 63",
     education: [
-      "M.Sc. in Emobility, FAU Erlangen-Nürnberg",
-      "B.Sc. in Mechanical Engineering"
+      "Presidential School in Termez",
+      "B.Sc. in New Uzbekistan University"
     ],
     skills: [
       "JavaScript, Python, SQL",
-      "Cybersecurity, AI, Machine Learning",
-      "Project Management, Agile, Scrum"
+      "Cybersecurity, C++",
     ],
-    experience: [
-      "Lecturer at Smart Industry Campus GmbH (2024 - Present)",
-      "2 years industry experience in ERP technology",
-      "Tutor for Network+, Python, SQL and Cybersecurity"
-    ]
   };
 
   document.getElementById("name").textContent = resumeData.name;
@@ -90,7 +84,6 @@
 
   populateList("education", resumeData.education);
   populateList("skills", resumeData.skills);
-  populateList("experience", resumeData.experience);
 </script>
 
 </body>
